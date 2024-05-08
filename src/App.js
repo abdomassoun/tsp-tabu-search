@@ -29,19 +29,19 @@ function App() {
   //   setDistanceMatrix(createInitialMatrix(numRows, value));
   // };
 
-  // const handleDistanceMatrixChange = (event, row, col) => {
-  //   const value = parseInt(event.target.value);
-  //   const updatedMatrix = [...distanceMatrix];
-  //   updatedMatrix[row][col] = isNaN(value) ? 0 : value;
-  //   setDistanceMatrix(updatedMatrix);
-  // };
-
-  const handleDistanceMatrixChange = (event,size) => {
+  const handleDistanceMatrixChange = (event, row, col) => {
     const value = parseInt(event.target.value);
     const updatedMatrix = [...distanceMatrix];
-    updatedMatrix[size][size] = isNaN(value) ? 0 : value;
+    updatedMatrix[row][col] = isNaN(value) ? 0 : value;
     setDistanceMatrix(updatedMatrix);
-  }
+  };
+
+  // const handleDistanceMatrixChange = (event,size) => {
+  //   const value = parseInt(event.target.value);
+  //   const updatedMatrix = [...distanceMatrix];
+  //   updatedMatrix[size][size] = isNaN(value) ? 0 : value;
+  //   setDistanceMatrix(updatedMatrix);
+  // }
 
   function createInitialMatrix(size) {
     const matrix = [];
@@ -75,7 +75,7 @@ function App() {
           onChange={handleMatrixSizeChange}
         />
       </div>
-      <table>
+      <table style={{ backgroundColor: "gray" }}>
         <tbody>
           {distanceMatrix.map((row, rowIndex) => (
             <tr key={rowIndex}>
@@ -85,7 +85,7 @@ function App() {
                     type="number"
                     value={col}
                     onChange={(event) =>
-                      handleDistanceMatrixChange(event, matrixSize)
+                      handleDistanceMatrixChange(event, rowIndex, colIndex)
                     }
                     style={{
                       fontFamily: "monospace",

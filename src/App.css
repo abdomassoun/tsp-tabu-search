@@ -9,6 +9,8 @@
   box-shadow: 0 2px 40px rgba(0, 0, 0, 0.2); /* Add this line for shadow */
   border-radius: 10px; /* Add this line for rounded edges */
   background-color: #000a1f;
+  padding-bottom: 10px;
+  padding-top: 10px;
 
 }
 Slider {
