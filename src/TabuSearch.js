@@ -82,7 +82,7 @@ function TabuSearch({ distanceMatrix }) {
 
   return (
     <div>
-      <h2>Best Tour: {bestTour.join(' -> ')} -> {bestTour[0]}</h2>
+      <h2>Best Tour: {bestTour.join(' ➜ ')} ➜ {bestTour[0]}</h2>
       <h2>Best Tour Length: {bestTourLength}</h2>
     </div>
   );
